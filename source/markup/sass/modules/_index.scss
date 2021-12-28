@@ -1,0 +1,381 @@
+html {
+ min-height: 100vh;
+}
+
+body {
+ min-height: 100vh;
+ background: linear-gradient(-45deg, #00c6fb 0%, #005bea 100%);
+ font-family: MavenPro, sans-serif;
+ color: #fff;
+ font-size: 16px;
+ line-height: normal;
+ overflow-x: hidden;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ @include mobile {
+  font-size: 14px;
+ }
+}
+
+.main-wrapper {
+ width: 1120px;
+ margin: 0 auto;
+ @include tablet {
+  width: 700px;
+ }
+ @include mobile {
+  width: 310px;
+ }
+}
+
+.main {
+ position: relative;
+ opacity: 0;
+ transition: 0.5s;
+ @include mobile {
+  opacity: 1;
+  overflow-x: hidden;
+ }
+
+ &.active {
+  opacity: 1;
+ }
+}
+
+.section {
+ opacity: 1;
+ transition: 0.3s;
+
+ &.section--faded {
+  opacity: 0;
+ }
+}
+
+.section-inner {
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ overflow: hidden;
+ padding: 125px 0 45px;
+ @include laptop {
+  padding: 115px 0 35px;
+ }
+ @include tablet {
+  min-height: 1024px;
+  padding: 142px 0 72px;
+ }
+ @include mobile {
+  min-height: 640px;
+  padding: 48px 0 36px;
+ }
+
+ > .main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ }
+}
+
+.br-lg {
+ display: block;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.br-lp {
+ display: none;
+ @include laptop {
+  display: block;
+ }
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.br-lp-md {
+ display: none;
+ @include laptop {
+  display: block;
+ }
+ @include tablet {
+  display: block;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.br-lp-sm {
+ display: none;
+ @include laptop {
+  display: block;
+ }
+ @include tablet {
+  display: block;
+ }
+ @include mobile {
+  display: block;
+ }
+}
+
+.br-lg-md {
+ display: block;
+ @include tablet {
+  display: block;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.br-lg--sm {
+ display: block;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: block;
+ }
+}
+
+.br-md-sm {
+ display: none;
+ @include tablet {
+  display: block;
+ }
+ @include mobile {
+  display: block;
+ }
+}
+
+.br-md {
+ display: none;
+ @include tablet {
+  display: block;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.br-sm {
+ display: none;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: block;
+ }
+}
+
+.br-sm-text {
+ display: none;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: inline;
+ }
+}
+
+.inline-lg {
+ display: inline;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.inline-lp {
+ display: none;
+ @include laptop {
+  display: inline;
+ }
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.inline-lp-md {
+ display: none;
+ @include laptop {
+  display: inline;
+ }
+ @include tablet {
+  display: inline;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.inline-lp-sm {
+ display: none;
+ @include laptop {
+  display: inline;
+ }
+ @include tablet {
+  display: inline;
+ }
+ @include mobile {
+  display: inline;
+ }
+}
+
+.inline-lg-md {
+ display: inline;
+ @include tablet {
+  display: inline;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.inline-md-sm {
+ display: none;
+ @include tablet {
+  display: inline;
+ }
+ @include mobile {
+  display: inline;
+ }
+}
+
+.inline-md {
+ display: none;
+ @include tablet {
+  display: inline;
+ }
+ @include mobile {
+  display: none;
+ }
+}
+
+.inline-sm {
+ display: none;
+ @include tablet {
+  display: none;
+ }
+ @include mobile {
+  display: inline;
+ }
+}
+
+.hidden {
+ display: none;
+}
+
+.clear {
+ display: table;
+ clear: both;
+}
+
+p, h1, h2, h3, h4, h5, h6, img {
+ display: block;
+}
+
+a {
+ color: #fff;
+ text-decoration: none;
+ cursor: pointer;
+ transition: 0.5s;
+}
+
+button {
+ background: none;
+ border: none;
+ transition: 0.5s;
+}
+
+em {
+ font-style: italic;
+}
+
+b, strong {
+ font-weight: 700;
+}
+
+input, textarea, select, .input, .textarea, .select {
+ width: 100%;
+ display: block;
+ border: none;
+ border-bottom: 1px solid rgba(255,255,255,0.3);
+ background: transparent;
+ color: #fff;
+ font-family: MavenPro, sans-serif;
+ font-size: 24px;
+ line-height: normal;
+ padding: 15px 0;
+ outline: none;
+ transition: 0.5s;
+ @include laptop {
+  font-size: 20px;
+  padding: 12px 0;
+ }
+ @include mobile {
+  font-size: 20px;
+  padding: 10px 0;
+ }
+ &:active, &:focus {
+  border-color: #fff;
+ }
+}
+
+textarea {
+ resize: none;
+}
+
+label {
+ display: block;
+ color: #fff;
+ font-size: 24px;
+ @include laptop {
+  font-size: 20px;
+ }
+ @include mobile {
+  font-size: 20px;
+ }
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+ color: rgba(255,255,255,0.5);
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color: rgba(255,255,255,0.5);
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color: rgba(255,255,255,0.5);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: rgba(255,255,255,0.5);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: rgba(255,255,255,0.5);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+ color: rgba(255,255,255,0.5);
+}
+
+input:-webkit-autofill {
+ -webkit-box-shadow: 0 0 0 30px white inset;
+}

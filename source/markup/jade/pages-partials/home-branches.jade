@@ -1,0 +1,44 @@
+.section
+  .section-inner.home-branches.faded
+    .main-wrapper
+      h2.title.home-branches__title Our Branches
+      h3.h3.home-branches__subtitle To increase efficiency and care on each product personally, we are divided on the four main branches
+
+      ul.home-branches-list
+        li.home-branches-item
+          .home-branches-item__thumb(style="background-image: url(img/home/branches/home-branches-item-1.jpg)")
+          .home-branches-item__content
+            h3.home-branches-item__title Game Development
+            p.home-branches-item__text We create casual, mobile, <br>A-AAA products from scratch, porting, co-development and helping your ideas became rock solid games
+        li.home-branches-item
+          .home-branches-item__thumb(style="background-image: url(img/home/branches/home-branches-item-2.jpg)")
+          .home-branches-item__content
+            h3.home-branches-item__title VR/AR<br> for Brands
+            p.home-branches-item__text VR/AR solutions for digital agencies, marketing teams and brands for bringing awareness though immersive technologies
+        li.home-branches-item
+          .home-branches-item__thumb(style="background-image: url(img/home/branches/home-branches-item-3.jpg)")
+          .home-branches-item__content
+            h3.home-branches-item__title Serious<br> Games
+            p.home-branches-item__text 5 years of experience in developing Virtual Trainings and Simulations for various businesses (mostly for Sports, Education and Healthcare)
+        li.home-branches-item
+          .home-branches-item__thumb(style="background-image: url(img/home/branches/home-branches-item-4.jpg)")
+          .home-branches-item__content
+            h3.home-branches-item__title Web and Mobile Development
+            p.home-branches-item__text New addition to our eco-system, that produces cloud-based solutions, restAPI integrations, CRM and Analytics automation
+
+      a(href="#").btn.home-branches__btn ASK FOR PORTFOLIO
+
+
+  script.
+    $(function () {
+      if ($(window).width() < 720) {
+        $('.home-branches-list').slick({
+          adaptiveHeight: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true
+        });
+      }
+    });

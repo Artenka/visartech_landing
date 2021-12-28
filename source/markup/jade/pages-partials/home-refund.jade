@@ -1,0 +1,41 @@
+.section
+  .section-inner.home-refund.faded
+    .main-wrapper
+      h2.title.home-refund__title Money Back guarantee during 30 days Trial period
+      h3.home-refund__subtitle As any service company, we give our clients an ability to understand the way we work in the most harmless way, we offer 30 days trial period. If you not satisfied with our collaboration, just write us why and we will return all your funds back - 100%, no hidden charges
+
+      .home-refund-timeline-layout.hidden-scroll
+        ul.home-refund-timeline
+          li.home-refund-timeline-item
+            .home-refund-timeline-item__icon(style="background-image: url(img/home/refund/home-refund-timeline-item-1.svg)")
+            h2.home-refund-timeline-item__title Make an Enquiry
+            p.home-refund-timeline-item__text Contact your project manager during trial period about money back guarantee
+          li.home-refund-timeline-item
+            .home-refund-timeline-item__icon(style="background-image: url(img/home/refund/home-refund-timeline-item-2.svg)")
+            h2.home-refund-timeline-item__title Provide a valid reason
+            p.home-refund-timeline-item__text After your enquiry, we begin a dispute procedure when you should provide a valid reason that something in your opinion goes wrong. For example, bugs
+          li.home-refund-timeline-item
+            .home-refund-timeline-item__icon(style="background-image: url(img/home/refund/home-refund-timeline-item-3.svg)")
+            h2.home-refund-timeline-item__title Sign a termination of cooperation agreement
+            p.home-refund-timeline-item__text After the end of dispute procedure, we are send you an agreement on termination of cooperation. After signing an agreement, both delete all product assets that were made during trial period (including code, graphic assets and documentation). Further use of materials by both parties are strictly prohibited
+          li.home-refund-timeline-item
+            .home-refund-timeline-item__icon(style="background-image: url(img/home/refund/home-refund-timeline-item-4.svg)")
+            h2.home-refund-timeline-item__title Get your money back
+            p.home-refund-timeline-item__text After all product assets are deleted by both parties, you will get your money back during 5 working days
+
+      a(href="#").btn.home-refund__btn KNOW MORE
+
+
+  script.
+    $(function () {
+      if ($(window).width() < 720) {
+        $('.home-refund-timeline').slick({
+          adaptiveHeight: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true
+        });
+      }
+    });

@@ -1,0 +1,45 @@
+.section
+  .section-inner.home-company.faded
+    .home-company-triangles
+
+    .main-wrapper
+      h2.title.home-company__title We solve common outsource problems
+      h3.h3.home-company__subtitle Having 9 years of experience on the market, we know exactly<br> the main pains of outsource and how to resolve them.
+
+      ul.home-company-list
+        li.home-company-item
+          .home-company-item__icon(style="background-image: url(img/home/company/home-company-item-1.svg)")
+          h3.h3.home-company-item__title Code Quality
+          button.btn.btn--md.home-company-item__btn.popup-link(onclick="showCompanyPopup(0)") PAIN RELIEF
+        li.home-company-item
+          .home-company-item__icon(style="background-image: url(img/home/company/home-company-item-2.svg)")
+          h3.h3.home-company-item__title Hidden charges
+          button.btn.btn--md.home-company-item__btn.popup-link(onclick="showCompanyPopup(1)") PAIN RELIEF
+        li.home-company-item
+          .home-company-item__icon(style="background-image: url(img/home/company/home-company-item-3.svg)")
+          h3.h3.home-company-item__title Loss of Control
+          button.btn.btn--md.home-company-item__btn.popup-link(onclick="showCompanyPopup(2)") PAIN RELIEF
+        li.home-company-item
+          .home-company-item__icon(style="background-image: url(img/home/company/home-company-item-4.svg)")
+          h3.h3.home-company-item__title Poor Communication
+          button.btn.btn--md.home-company-item__btn.popup-link(onclick="showCompanyPopup(3)") PAIN RELIEF
+
+
+  script.
+    $(function () {
+      if ($(window).width() < 720) {
+        $('.home-company-list').slick({
+          adaptiveHeight: true,
+          infinite: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: true,
+          dots: true
+        });
+      }
+    });
+
+    function showCompanyPopup(item) {
+      showPopup('#company-popup');
+      $('.popup-company-slider').slick('slickGoTo', item);
+    }

@@ -1,0 +1,26 @@
+.section
+  .section-inner.home-contacts.faded
+    .main-wrapper
+      .home-contacts-main
+        h2.home-contacts-main__title.title Contact Us
+        form
+          .home-contacts-form
+            .line-input-layout.formgroup
+              .line-input-line
+              label.line-label Your Name
+              input.line-input(type="text" name="name" required)
+            .line-input-layout.formgroup
+              .line-input-line
+              label.line-label Email
+              input.line-input(type="email" name="email" required)
+            .line-input-layout.formgroup
+              .line-input-line
+              label.line-label Phone
+              input.line-input(type="text" name="phone" required)
+            .line-input-layout.formgroup
+              .line-input-line
+              label.line-label Your Message
+              input.line-input(type="text" name="message" required)
+            button(type="submit").btn.home-contacts-form__submit SEND MESSAGE
+
+      include ../partials/footer

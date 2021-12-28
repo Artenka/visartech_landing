@@ -1,0 +1,12 @@
+.preloader {
+ width: 100vw;
+ height: 100vh;
+ background: linear-gradient(-45deg, #00c6fb 0%, #005bea 100%);
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 999;
+ @include mobile {
+  display: none;
+ }
+}

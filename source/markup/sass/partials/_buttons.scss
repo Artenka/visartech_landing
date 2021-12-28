@@ -1,0 +1,36 @@
+.btn {
+ display: inline-block;
+ border-radius: 10px;
+ background-color: #ffaf00;
+ color: #ffffff;
+ font-size: 19px;
+ font-weight: 700;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ text-align: center;
+ padding: 26px 50px;
+ cursor: pointer;
+ transition: 0.7s;
+ @include laptop {
+  font-size: 17px;
+  padding: 20px 40px;
+ }
+ @include mobile {
+  font-size: 16px;
+  letter-spacing: 1.68px;
+  padding: 15px;
+ }
+ &:hover {
+  transform: scale(1.02);
+ }
+
+ &.btn--md {
+  padding: 26px;
+  @include laptop {
+   padding: 20px;
+  }
+  @include mobile {
+   padding: 15px;
+  }
+ }
+}

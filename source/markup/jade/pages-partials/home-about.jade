@@ -1,0 +1,124 @@
+.section
+  .section-inner.home-about.faded
+    .main-wrapper
+      h2.title.home-about__title Our Story
+
+      .home-about-slider-layout
+        .home-about-slider
+          .home-about-slider__circles
+            .home-about-slider__circle.home-about-slider__circle--main
+            .home-about-slider__circle
+            .home-about-slider__circle
+          .home-about-slider__arrows
+            .home-about-slider__arrow.home-about-slider__arrow--left
+            .home-about-slider__arrow.home-about-slider__arrow--right
+          .home-about-slider__dots
+          .home-about-slider-list
+            .home-about-slide.home-about-slide--active
+              .home-about-slide-content
+                .home-about-slide-content__thumb
+                  .home-about-slide-content__thumb-inner(style="background-image: url(img/home/about/slide-thumb-1.jpg)")
+                  .home-about-slide-content__button 2008 - 2010
+                .home-about-slide-content__main
+                  h2.home-about-slide-content__date 2008-2010
+                  h3.home-about-slide-content__title Our Humble Beginnings
+                  p.home-about-slide-content__text We started as a team of iOS developers, but always was passionate about   game industry. That's why our focus was moved to gamification, making bored apps looks attractive to end users.
+            .home-about-slide
+              .home-about-slide-content
+                .home-about-slide-content__thumb
+                  .home-about-slide-content__thumb-inner(style="background-image: url(img/home/about/slide-thumb-1.jpg)")
+                  .home-about-slide-content__button 2010 - 2012
+                .home-about-slide-content__main
+                  h2.home-about-slide-content__date 2010 - 2012
+                  h3.home-about-slide-content__title Our Humble Beginnings
+                  p.home-about-slide-content__text We started as a team of iOS developers, but always was passionate about   game industry. That's why our focus was moved to gamification, making bored apps looks attractive to end users.
+            .home-about-slide
+              .home-about-slide-content
+                .home-about-slide-content__thumb
+                  .home-about-slide-content__thumb-inner(style="background-image: url(img/home/about/slide-thumb-1.jpg)")
+                  .home-about-slide-content__button 2012 - 2014
+                .home-about-slide-content__main
+                  h2.home-about-slide-content__date 2012 - 2014
+                  h3.home-about-slide-content__title Our Humble Beginnings
+                  p.home-about-slide-content__text We started as a team of iOS developers, but always was passionate about   game industry. That's why our focus was moved to gamification, making bored apps looks attractive to end users.
+            .home-about-slide
+              .home-about-slide-content
+                .home-about-slide-content__thumb
+                  .home-about-slide-content__thumb-inner(style="background-image: url(img/home/about/slide-thumb-1.jpg)")
+                  .home-about-slide-content__button 2014 - 2016
+                .home-about-slide-content__main
+                  h2.home-about-slide-content__date 2014 - 2016
+                  h3.home-about-slide-content__title Our Humble Beginnings
+                  p.home-about-slide-content__text We started as a team of iOS developers, but always was passionate about   game industry. That's why our focus was moved to gamification, making bored apps looks attractive to end users.
+
+
+  script.
+    $(function(){
+      aboutSliderInitDots();
+
+      $('.home-about-slider__arrow--right').click(function(){
+        var $prevElement = $('.home-about-slide--active');
+        var $activeElement = $prevElement.next('.home-about-slide');
+        var $prevDot = $('.home-about-slider__dot--active');
+        var $activeDot = $prevDot.next('.home-about-slider__dot');
+
+        if($activeElement.length != 0) {
+          $('.home-about-slide--prev-current').removeClass('home-about-slide--prev-current');
+          $prevElement.removeClass('home-about-slide--active').addClass('home-about-slide--prev home-about-slide--prev-current');
+          $activeElement.addClass('home-about-slide--active');
+          $prevDot.removeClass('home-about-slider__dot--active');
+          $activeDot.addClass('home-about-slider__dot--active');
+        }
+      });
+
+      $('.home-about-slider__arrow--left').click(function () {
+        var $prevElement = $('.home-about-slide--active');
+        var $activeElement = $prevElement.prev('.home-about-slide');
+        var $prevDot = $('.home-about-slider__dot--active');
+        var $activeDot = $prevDot.prev('.home-about-slider__dot');
+
+        if ($activeElement.length != 0) {
+          $activeElement.prev('.home-about-slide--prev').addClass('home-about-slide--prev-current');
+          $prevElement.removeClass('home-about-slide--active');
+          $activeElement.removeClass('home-about-slide--prev home-about-slide--prev-current').addClass('home-about-slide--active');
+          $prevDot.removeClass('home-about-slider__dot--active');
+          $activeDot.addClass('home-about-slider__dot--active');
+        }
+      });
+
+      $('.home-about-slider__dot').click(function(){
+        var prevNumber = 0;
+        var activeNumber = $(this).data('slide');
+        var $prevElement = $('.home-about-slide--active');
+        var $activeElement = $('.home-about-slide:eq('+ activeNumber +')');
+
+        $('.home-about-slide').each(function(){
+          if($(this).hasClass('home-about-slide--active')) {
+            return false;
+          } else {
+            prevNumber++;
+          }
+        });
+
+        if(activeNumber != prevNumber) {
+          $('.home-about-slider__dot').removeClass('home-about-slider__dot--active');
+          $(this).addClass('home-about-slider__dot--active');
+          $prevElement.removeClass('home-about-slide--active');
+          $activeElement.addClass('home-about-slide--active');
+          $('.home-about-slide--prev-current').removeClass('home-about-slide--prev-current');
+          if(activeNumber < prevNumber) {
+            $activeElement.nextAll().removeClass('home-about-slide--prev');
+          } else if(activeNumber > prevNumber) {
+            $activeElement.prevAll().addClass('home-about-slide--prev');
+          }
+          $activeElement.prev('.home-about-slide').addClass('home-about-slide--prev-current');
+        }
+      });
+    });
+
+    function aboutSliderInitDots() {
+      for(var i = 0; i < $('.home-about-slide').length; i++) {
+        $('.home-about-slider__dots').append('<div class="home-about-slider__dot" data-slide="'+ i +'"></div>');
+      }
+      $('.home-about-slider__dot:first-child').addClass('home-about-slider__dot--active');
+    }
